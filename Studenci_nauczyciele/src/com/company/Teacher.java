@@ -1,6 +1,8 @@
 package com.company;
 
-public class Teacher extends Person {
+import java.util.Collection;
+
+public class Teacher extends Person implements ExaminateStudents, Research {
     private String areaOfInterests;
     private String academicDegree;
     private double salary;
@@ -25,4 +27,25 @@ public class Teacher extends Person {
        double yearBonus = salary * 12 / 10;
        return yearBonus;
     }
-}
+
+    @Override
+    public void examinate(Collection<Student> students, String subject) {
+        for (Student i : students) {
+            if (i.grades.get(subject) == 5) {
+                System.out.println(i.name + " zdawal juz egzamin");
+            } else {
+                System.out.println(i.name + " nie zdawal jeszcze egzaminu");
+            }
+        }
+    }
+
+        @Override
+        public void doResearch () {
+
+        }
+
+        @Override
+        public void writeAPublication (String title){
+
+        }
+    }

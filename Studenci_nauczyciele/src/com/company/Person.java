@@ -4,10 +4,12 @@ abstract public class Person {
     protected String name;
     protected String surname;
     protected int age;
+    protected boolean eligible;
     public Person(String imie, String nazwisko, int wiek){
         name = imie;
         surname = nazwisko;
         age = wiek;
+        eligible = true;
     }
     abstract String purposeOfGoingToUniwersity();
 
@@ -18,11 +20,10 @@ abstract public class Person {
 
     }
     public void tellMeSomethingAboutYou(){
-        introuceYourself();
-        System.out.println(wayOfSpendingHoliday());
-        System.out.println(purposeOfGoingToUniwersity());
-
-
-
+        if(eligible != false){
+            introuceYourself();
+            System.out.println(wayOfSpendingHoliday());
+            System.out.println(purposeOfGoingToUniwersity());
+        }
     }
 }
